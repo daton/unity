@@ -3,59 +3,99 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RayShooter : MonoBehaviour {
-    Camera camara;
     public AudioSource fuenteDisparo;
     public AudioClip clipDisparo;
-    public ParticleSystem explosion;
-    // Use this for initialization
-    void Start () {
+    Camera camara;
+    public ParticleSystem chispas;
+    public ParticleSystem humito;
+    int zombiDisparos = 0;
+ public    GameObject yaku;
+
+	// Use this for initialization
+	void Start () {
         camara = GetComponent<Camera>();
+        //Las siguientes lineas ocultan el cursor p flecha del mouse
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
+
+	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        if (zombiDisparos < 3)
+        {
+            Vector3 pos = new Vector3(transform.position.x,
+                yaku.transform.position.y, transform.position.z);
+
+            yaku.transform.LookAt(pos);
+            //Vamos a hacer que nos siga hasta el final
+            yaku.transform.Translate(0, 0, Time.deltaTime * 1);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
-            print("Se activo el disparo");
-            //Activamos el disparo
+            print("DISPARASTE!!");
             fuenteDisparo.PlayOneShot(clipDisparo);
-            //Para aplicar la tecnica del RayCasting primero obtenemos
-            //la posicion de la camara
-            float ancho = camara.pixelWidth / 2;
-            float alto = camara.pixelHeight / 2;
-            //Aplicamos el RayCasting
-            Vector3 punto = new Vector3(ancho, alto, 0);
-            Ray rayo = camara.ScreenPointToRay(punto);
-            //Sacamos la proyecccion hasta un objeto de golpe
+            //Ubicamos el punto P1
+            Vector3 p1 = 
+          new Vector3(camara.pixelWidth / 2, camara.pixelHeight / 2,0);
+
+            //Generamos el rayo que sale del punto P1
+            Ray rayo = camara.ScreenPointToRay(p1);
+
+            //Generamos otras clase predefinida de unity el golpe
             RaycastHit golpe;
-            //Con un if preguntamos si el rayo choco con un objeto
-            if (Physics.Raycast(rayo, out golpe))
+            if(Physics.Raycast(rayo, out golpe))
             {
-                StartCoroutine(AccionarExplosion(golpe.point));
-                if (golpe.transform.gameObject.tag == "cubeta")
+                //Aqui va la animacin de las chispas y el humito
+                StartCoroutine(lanzarChispitas(golpe.point));
+                StartCoroutine(lanzarHumito(golpe.point));
+                //verificamos colision con el zombi
+
+               
+                if (golpe.transform.gameObject.tag == "zombi")
                 {
-                    //Le pedimos el rigid body
-          Rigidbody rb=golpe.transform.gameObject.GetComponent<Rigidbody>();
-                    //Con este rb
-                    rb.AddForce(transform.forward * 10, ForceMode.Impulse);
+                    zombiDisparos++;
+                    if (zombiDisparos == 3)
+                    {
+                        //  Destroy(golpe.transform.gameObject);
+golpe.transform.gameObject.GetComponent<Animator>().Play("caer");
+
+                        YakuControlador1.velocidad = 0;
+                        
+                       
+                    }
                 }
+
+
             }
         }
-    }
+		
+	}
 
     public void OnGUI()
     {
-        float ancho = camara.pixelWidth / 2 - 6;
-        float alto = camara.pixelHeight / 2 - 6;
-        GUI.Box(new Rect(ancho, alto, 12, 12), "*");
+        //Dibujamos una caja  a partir e un panel opaco
+        //Buscamos la posicion de la camara
+        float posx = camara.pixelWidth / 2 - 6;
+        float posy = camara.pixelHeight / 2 - 6;
+        GUI.Box(new Rect(posx, posy, 12, 12), "*");
     }
 
-    public IEnumerator AccionarExplosion(Vector3 pos)
+    private IEnumerator lanzarChispitas(Vector3 pos)
     {
-        ParticleSystem explo = Instantiate(explosion, pos, Quaternion.identity);
+     ParticleSystem chis = Instantiate(chispas, pos, Quaternion.identity);
+
         yield return new WaitForSeconds(3);
-        Destroy(explo);
+        Destroy(chis);
+    }
+    private IEnumerator lanzarHumito(Vector3 pos)
+    {
+        ParticleSystem hum = Instantiate(humito, pos, Quaternion.identity);
+
+        yield return new WaitForSeconds(5);
+        Destroy(hum);
     }
 }
