@@ -8,6 +8,8 @@ public class RayShooter : MonoBehaviour {
     Camera camara;
     public ParticleSystem chispas;
     public ParticleSystem humito;
+    int zombiDisparos = 0;
+ public    GameObject yaku;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,17 @@ public class RayShooter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        if (zombiDisparos < 3)
+        {
+            Vector3 pos = new Vector3(transform.position.x,
+                yaku.transform.position.y, transform.position.z);
+
+            yaku.transform.LookAt(pos);
+            //Vamos a hacer que nos siga hasta el final
+            yaku.transform.Translate(0, 0, Time.deltaTime * 1);
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -39,6 +52,24 @@ public class RayShooter : MonoBehaviour {
                 //Aqui va la animacin de las chispas y el humito
                 StartCoroutine(lanzarChispitas(golpe.point));
                 StartCoroutine(lanzarHumito(golpe.point));
+                //verificamos colision con el zombi
+
+               
+                if (golpe.transform.gameObject.tag == "zombi")
+                {
+                    zombiDisparos++;
+                    if (zombiDisparos == 3)
+                    {
+                        //  Destroy(golpe.transform.gameObject);
+golpe.transform.gameObject.GetComponent<Animator>().Play("caer");
+
+                        YakuControlador1.velocidad = 0;
+                        
+                       
+                    }
+                }
+
+
             }
         }
 		
