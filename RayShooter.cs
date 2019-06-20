@@ -60,10 +60,10 @@ public class RayShooter : MonoBehaviour {
                     zombiDisparos++;
                     if (zombiDisparos == 3)
                     {
-                        //  Destroy(golpe.transform.gameObject);
-golpe.transform.gameObject.GetComponent<Animator>().Play("caer");
+                          Destroy(golpe.transform.gameObject);
+//golpe.transform.gameObject.GetComponent<Animator>().Play("caer");
 
-                        YakuControlador1.velocidad = 0;
+            //            YakuControlador1.velocidad = 0;
                         
                        
                     }
