@@ -3,11 +3,11 @@ Cursito basico de unity
 
 [Descargar de aqui los sistemas de particulas](https://sierra-guadalupe.org/unity/piromaniaco.unitypackage)
 
-## Cinemachie
+## Cinemachine
  
 Cinemachine es el director de camaras y permite añadir cámaras virtuales y poder hacer un blending de camaras
 
-
+![](2019-07-06-17-19-14.png)
 Timeline es un secuenciador podemos añadir tracks y en es emismo track tener eventos y alli mismo  <br>
 
 Primero debemos de crear un objeto vació que se llame Mis cut scenes del intro. Recetar la componente para que la ponga en ceros. <br>
