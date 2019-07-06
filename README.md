@@ -4,6 +4,14 @@ Cursito basico de unity
 [Descargar de aqui los sistemas de particulas](https://sierra-guadalupe.org/unity/piromaniaco.unitypackage)
 
 ## Cinemachie
- Timeline es un secuenciador podemos añadir tracks y en es emismo track tener eventos y alli mismo  
+ 
+Cinemachine es el director de camaras y permite añadir cámaras virtuales y poder hacer un blending de camaras
 
- Cinemachine es el director de camas y permite añadir virutal cameras y pode hacer un blending de camaras
+
+Timeline es un secuenciador podemos añadir tracks y en es emismo track tener eventos y alli mismo  
+
+Primero debemos de crear un objeto vació que se llame Mis cut scenes del intro. Recetar la componente para que la ponga en ceros. Después creamos las cámaras virtuales y las agregamos adenrto de ese objeto vacio.
+Observa que en cuanto agrega la primer camara virtual tu Main Camera tiene en automatico la propiedad Cinemachine Brain, ya que sera la que maneje todoas las camaras virtuales.
+Posteriormente debes de posicionarte en la compnente de las CutScenes y en ella vas a agregar un timeline
+Cuando lo hagas quitas el animator y en el boton de add le das click y agregas la opcione "Cinemachine timeline".
+ Ya despues en la timeline le das click y agrega "Add cinemachine shot" y en el slot que aparece en el inspector de propiedades agregas la camara virtual de tu prefernecias, para cada camara repites el procedimiento, aqui es donde puedes hacer un blending para tener un efecto de transicin mas profesional.
