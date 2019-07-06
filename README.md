@@ -16,3 +16,4 @@ Observa que en cuanto agrega la primer camara virtual tu Main Camera tiene en au
 Posteriormente debes de posicionarte en la compnente de las CutScenes y en ella vas a agregar un timeline
 Cuando lo hagas quitas el animator y en el boton de add le das click y agregas la opcione "Cinemachine timeline".<br><br>
  Ya despues en la timeline le das click y agrega "Add cinemachine shot" y en el slot que aparece en el inspector de propiedades agregas la camara virtual de tu prefernecias, para cada camara repites el procedimiento, aqui es donde puedes hacer un blending para tener un efecto de transicin mas profesional.
+ ![](2019-07-06-17-17-05.png)
