@@ -10,7 +10,8 @@ Cinemachine es el director de camaras y permite añadir cámaras virtuales y pod
 
 Timeline es un secuenciador podemos añadir tracks y en es emismo track tener eventos y alli mismo  <br>
 
-Primero debemos de crear un objeto vació que se llame Mis cut scenes del intro. Recetar la componente para que la ponga en ceros. Después creamos las cámaras virtuales y las agregamos adenrto de ese objeto vacio.
+Primero debemos de crear un objeto vació que se llame Mis cut scenes del intro. Recetar la componente para que la ponga en ceros. <br>
+Después creamos las cámaras virtuales y las agregamos adenrto de ese objeto vacio.<br>
 Observa que en cuanto agrega la primer camara virtual tu Main Camera tiene en automatico la propiedad Cinemachine Brain, ya que sera la que maneje todoas las camaras virtuales.<br>
 Posteriormente debes de posicionarte en la compnente de las CutScenes y en ella vas a agregar un timeline
 Cuando lo hagas quitas el animator y en el boton de add le das click y agregas la opcione "Cinemachine timeline".<br>
