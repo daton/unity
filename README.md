@@ -34,4 +34,7 @@ Para hacer la animacion del texto, debes primero de seleccionar tu panel que ya 
 ## Realizar un paneo
 Para llevar a cabo un paneo primero agregamos en el Timline Add y seleccionamos Animation Track
 
-![](2019-07-14-17-17-19.png)
+![](2019-07-14-17-17-19.png)<br><br>
+
+Luego arrastramos hacia ese animator la camara virtual ubicada desde la jerarquia de objetos , sobre la cual deseamos crear como camara de paneo, al hacerlo alli mismo nos va a pedir crearle un nuevo animator, le decimos que si, y aceptamos el nombre que nos propone. Despue ya podemos epmezar a grabar con el botoncito rojo  y esplazamos nuestra camara virtual propuesta como de paneo. <br><br>
+Aqui lo importante es mover la cama y no pasarte mas alla de lo que equivale a lo que dura su animacion a lo que pasas a la siguiente cámara, ya que no tendría sentido pues en la timeline pasarás a la camar virtual 2.<br><br>
