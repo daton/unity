@@ -31,4 +31,7 @@ Cuando lo hagas quitas el animator y en el boton de add le das click y agregas l
 Para hacer la animacion del texto, debes primero de seleccionar tu panel que ya tiene el controlador y la animation vacia que ya creaste y ya en a ventana de animation la puedes progrmar como desees, en caso de un texto selecciona animate Tranform y posicion z y ya con eso creas un inicio y un final, no olvidando grabar con el boton rojo coomo se muestra y agregarndo un key fram inicial y final, como se muestra en la figura.<br>
 ![](2019-07-07-20-50-49.png)
 
-vamos a continuar la proxim clase
+## Realizar un paneo
+Para llevar a cabo un paneo primero agregamos en el Timline Add y seleccionamos Animation Track
+
+![](.README_images/2019-07-14-17-17-19.png)
