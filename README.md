@@ -34,4 +34,4 @@ Para hacer la animacion del texto, debes primero de seleccionar tu panel que ya 
 ## Realizar un paneo
 Para llevar a cabo un paneo primero agregamos en el Timline Add y seleccionamos Animation Track
 
-![](.README_images/2019-07-14-17-17-19.png)
+![](2019-07-14-17-17-19.png)
