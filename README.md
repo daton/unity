@@ -1,5 +1,5 @@
 # unity
-Cursito basico de unity
+Cursito basico de cinematografía unity
 
 [Descargar de aqui los sistemas de particulas](https://sierra-guadalupe.org/unity/piromaniaco.unitypackage)
 
