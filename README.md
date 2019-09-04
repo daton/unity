@@ -1,5 +1,5 @@
 # unity
-Cursito basico de cinematografía con cinemachine de hayyyyyyy unity
+Cursito basico de cinematografía con cinemachine UNITY
 
 [Descargar de aqui los sistemas de particulas](https://sierra-guadalupe.org/unity/piromaniaco.unitypackage)
 
@@ -7,18 +7,86 @@ Cursito basico de cinematografía con cinemachine de hayyyyyyy unity
  
 Cinemachine es el director de camaras y permite añadir cámaras virtuales y poder hacer un blending de camaras
 
-![](2019-07-06-17-30-02.png)
-Timeline es un secuenciador podemos añadir tracks y en es emismo track tener eventos y alli mismo agregar dichas secuencias de cámaras virtuales y otras animaciones. <br>
+![](.README_images/5019433c.png)
 
-Primero debemos de crear un objeto vació que se llame Mis cut scenes del intro. Recetar la componente para que la ponga en ceros. <br>
-Después creamos las cámaras virtuales y las agregamos adenrto de ese objeto vacio.<br>
-Observa que en cuanto agrega la primer camara virtual tu Main Camera tiene en automatico la propiedad Cinemachine Brain, ya que sera la que maneje todoas las camaras virtuales.<br><br>
-Posteriormente debes de posicionarte en la compnente de las CutScenes y en ella vas a agregar un timeline
-Cuando lo hagas quitas el animator y en el boton de add le das click y agregas la opcione "Cinemachine timeline".<br><br>
- Ya despues en la timeline le das click y agrega "Add cinemachine shot" y en el slot que aparece en el inspector de propiedades agregas la camara virtual de tu prefernecias, para cada camara repites el procedimiento, aqui es donde puedes hacer un blending para tener un efecto de transicin mas profesional.
- ![](2019-07-06-17-17-05.png)
 
+Timeline es un secuenciador podemos añadir tracks y en es emismo track tener eventos y ahi mismo agregar dichas secuencias de cámaras virtuales y otras animaciones. <br>
+
+1-.Debemos de crear un objeto vació que se llame Mis cut scenes del intro y reseteamos la componente para que la ponga en ceros como se muestra:
+
+![](.README_images/306ab092.png)  ![](.README_images/bf209e85.png)
+
+
+2-.Después creamos las cámaras virtuales y las agregamos adentro de ese objeto vacio.
+
+![](.README_images/1a1ffb7a.png)
+
+Observa que en cuanto se agrega la primer camara virtual tu Main Camera tiene en automatico la propiedad Cinemachine Brain, ya que sera la que maneje todas las cámaras virtuales, es importante mencionar que las cámaras virtuales debemos incorporarlas dentro de Mis cut scenes.
+
+
+![](.README_images/ecd7f2a0.png)
+
+
+3-.Posteriormente nos posicionamos en la componente de Mis Cut Scenes y en ella agregamos un timeline.
+
+![](.README_images/8b036080.png)
+
+4-.Le damos CREAR y a continuación le damos el nombre como se guardará y nos aparece la siguiente pantalla en la parte inferior:
+
+![](.README_images/c0097626.png)
+
+5-.Le quitamos el Animator (remove component) y del TimeLine de igual forma borramos el None.
+
+![](.README_images/826de21d.png)![](.README_images/5c20e182.png)
+
+6-.Una vez que quitamos lo anterior, le damos ADD en el botón que se muestra a continuación y agregamos "Cinemachine Track"
+
+
+![](.README_images/a98d188c.png)
+
+7-.Arrastramos el MAIN CAMERA dentro de "Cinemachine Track"
+
+![](.README_images/e064aa46.png)
+
+8-.Nos pocisionamos en TimeLine y le damos click derecho para escoger la opción "Add cimemachine shot", el fragmento que nos creó lo posicionamos desde "0" y cambiamos el fragmento a segundos:
+
+![](.README_images/9469a33d.png)
+
+![](.README_images/b591d94d.png)
+
+9-.Arrastramos la cam1 y la posicionamos del lado derecho en donde aparece Cinemachine Shot:
+
+![](.README_images/5f3a38c2.png)
+
+10-.Adherimos Cinemachine Shot tantas veces como cámaras tengamos, repitiendo el proceso del paso anterior.
+
+![](.README_images/072e9a6c.png)
+
+11-.Ahora posicionamos las cámaras en las distintas áreas de la escena, para acomodarlas con al ángulo y altura de nuestra preferencia:
+
+![](.README_images/1caf2107.png)
+
+12-.Dentro de la barra de herramientas podemos usar la figura de imagen para laejar y acercar, la cruz que es para indicar los ejes del plano, las flechas inversas son para girar los ejes de manera esférica,etc.
+
+![](.README_images/aeede741.png)
+
+Es importante mencionar que para poder estar seguro que se está moviendo la cámara seleccionada , en la parte derecha debemos seleccionar la opción "SOLO".
+
+13-.Una vez que se tienen las cámaras posicionadas, procedemos a hacer el "blendig", es decir las cámaras se desplazarán de una a otra de acuerdo a la posición en la que se encuentren, ésto lo hacemos traslapando cada escena de una cámara a otra.
+
+![](.README_images/d574ad00.png)
+
+14-.Agregamos música a la animación de la siguiente manera, creamos un objeto vacio , click derecho seleccionamos AUDIO y la opción AUDIO SOURCE, lo reenombramos como Sonido ambiental.
+
+![](.README_images/83035270.png)
+
+Es importante darle reset para que nos posicione la bocina en el centro de nuestra escena.
+
+15-.En nuestra carpeta de Audios, ya sea que ocupemos los que trae por default o descarguemos el sonido de nuestra preferencia.
+
+![](.README_images/3fa3add3.png)
  ## Creando animaciones adicionales con Animator en la Timline de cinemachine
+ 
  Para ellos vamos  a dar click derecho en la ventana de a izquierda del timeline en cinemachi y generamos seleccionamos la opcion "Animation Track" <br>
  ![](2019-07-07-20-35-37.png)
  Una vez hecho esto  debes de agregar un nuevo Animator , que prevemante ya debes de haber construido con el
@@ -44,3 +112,11 @@ Si en la Timeline no te gust+o un keyframe(rombito azul), simplemente le das cli
 
 Este se ocupa para que podamos hacer paneo  sobre la propiedad Look At de la amara virtual, lo que hacemos es primero generar un objeto vacío y ya con ese lo animamos con una animation pero recuerda primer agregar un animation controller.<br>
 Una vez hecho esto, en tu Timeline de las Cutscenes vas a darle al boton Add  y procedes a agregar un Add Animator Tracj y ya en el slot vacio que se genera en el Timeline agregas tu objeto vacio que previamente ya tiene el animator controller. Despues porcedes a gravar los dos puntos del obejto vacio de este anomator track para que la opcion Look At mire mientras tu estas en la camara 4 <br>
+dfgd
+d
+]
+
+
+![](.README_images/883093bc.png)
+
+![](.README_images/25a6e562.png)
