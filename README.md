@@ -85,6 +85,38 @@ Es importante darle reset para que nos posicione la bocina en el centro de nuest
 15-.En nuestra carpeta de Audios, ya sea que ocupemos los que trae por default o descarguemos el sonido de nuestra preferencia.
 
 ![](.README_images/3fa3add3.png)
+
+16-.Arrastramos el audio para colocarlo dentro de las opciones del Sonido ambiental
+
+![](.README_images/883093bc.png)
+
+17-.Para que el sonido se repita una vez terminado el TimeLine colocamos las opciones correspondientes como se muestra:
+
+![](.README_images/25a6e562.png)
+
+## Realizar un paneo
+
+Un paneo es realizar el movimiento de la cámara a traves de la escena, del personaje mismo o de cualquier sitio que se quiera visualizar.
+Para llevar a cabo un paneo primero agregamos en el Timeline ADD y seleccionamos Animation Track, esto se hará para cada cámara virtual que se hayan puesto en la TimeLine.
+
+![](.README_images/1e799a7a.png)
+
+Arrastramos la primer cámara al Animation Track y la colocamos dentro de ésta.
+
+![](.README_images/257a1ce2.png)
+
+Posicionamos el cursor del tiempo en 0 y comenzamos a grabar, presionando el punto rojo que se muestra en la imagen y comenzamos a mover la cámara.
+
+![](.README_images/f975b4d9.png)
+
+![](.README_images/038edbf5.png)
+
+Movemos el cursor del Time Line dependiendo de la duración del tiempo que queramos y continuamos grabando, moviendo la cámara a los distintos lugares que queramos.
+
+![](.README_images/9a0f352b.png)
+
+Una vez que terminamos de cubrir el total del TimeLine de la cámara1 continuamos con la cámara2
+![](.README_images/f2882c45.png)
  ## Creando animaciones adicionales con Animator en la Timline de cinemachine
  
  Para ellos vamos  a dar click derecho en la ventana de a izquierda del timeline en cinemachi y generamos seleccionamos la opcion "Animation Track" <br>
@@ -113,6 +145,7 @@ Si en la Timeline no te gust+o un keyframe(rombito azul), simplemente le das cli
 Este se ocupa para que podamos hacer paneo  sobre la propiedad Look At de la amara virtual, lo que hacemos es primero generar un objeto vacío y ya con ese lo animamos con una animation pero recuerda primer agregar un animation controller.<br>
 Una vez hecho esto, en tu Timeline de las Cutscenes vas a darle al boton Add  y procedes a agregar un Add Animator Tracj y ya en el slot vacio que se genera en el Timeline agregas tu objeto vacio que previamente ya tiene el animator controller. Despues porcedes a gravar los dos puntos del obejto vacio de este anomator track para que la opcion Look At mire mientras tu estas en la camara 4 <br>
 dfgd
+
 d
 ]
 
