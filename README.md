@@ -116,7 +116,85 @@ Movemos el cursor del Time Line dependiendo de la duración del tiempo que quera
 ![](.README_images/9a0f352b.png)
 
 Una vez que terminamos de cubrir el total del TimeLine de la cámara1 continuamos con la cámara2
+
 ![](.README_images/f2882c45.png)
+
+ ## Creando animaciones con Animator controler.
+ 
+ 1-.De la carpeta Prefabs la abrimos y arrastramos el objeto "John Lemon" dentro de esa carpeta como se muestra:
+ 
+ ![](.README_images/894c0f70.png)
+ 
+ 2-.Dentro de la carpeta Assets, ingresamos a la carpeta Animators que se encuentra de Assets, una vez dentro creamos un controlador, damos click derecho y seleccionamos CREATE/ANIMATOR CONTROLLER/ y le damos el nomnre del personaje que estamos usando, en este caso JohnLemon
+ 
+ ![](.README_images/daf71832.png)
+ 
+ 3-.Una vez que creamos el controlador, nos posicionamos en el prefrab del objeto, seleccionandolo y le damos prefab
+ 
+ ![](.README_images/24512ec6.png)
+ 
+ 4-.Arrastramos el controlador creado a la parte derecha de la pantalla, en la parte CONTROLLER.
+ 
+ ![](.README_images/6aad63f1.png)
+ ![](.README_images/960046b1.png)
+ 
+ 5-.Le damos doble click al animator para que lo editemos, nos abre una rejilla color gris, la cual nos indica que no tiene ningun estado.
+ 
+ ![](.README_images/cebbcfe6.png)
+ 
+ 6-.Si nos vamos a la carpeta Animation, ingresamos a la otra carpeta Anomation tenemos dos estados "Idle" y "Walk", si queremos probarlos le damos click en la pantalla de visualización.
+ 
+ ![](.README_images/ca479257.png)
+ 
+ 7-.La posición de Idle es cuando nuestro personaje se encuentra de pie, sin movimiento. Arrastramos ambas posicionesa la pantalla gris.
+ 
+ ![](.README_images/dde6c8c4.png)
+ 
+ 8-.Inmediatamente nos aparece una linea uniendo Entry con Idle, es con la posición con la que inicializará el personaje una vez que se ponga en play.
+ 
+ ![](.README_images/3f8ae7ba.png)
+ 
+ 9-.Vamos ahora a crear "Parámetros" , creamos uno de tipo Booleano y lo reenombramos como "IsWalking", este nos dirá si se encuentra caminando o no el objeto.
+ 
+ ![](.README_images/34900e6d.png)
+ 
+ 10-.Posicionandonos en el Rectangulo Idle vamos a generar un Estado,seleccionamos "Make Transition" y estiramos la flecha con rumbo al rectangulo WALK, de igual forma ahora nos posicionamos en el rectangulo WALK damos click derecho y seleccionamos "Make Transition" y la flecha la direccionamos al rectangulo Idle.
+ 
+ ![](.README_images/7f27d096.png)
+ 
+ 11-.Selecciono la flecha que ve de Idle a Walk, y nos vamos a la parte derecha de la pantalla en la parte de Transition, en Conditions agregamos la que creamos que se llama "IsWalking"
+ 
+ ![](.README_images/938d25a2.png)
+ 
+ 12-.Seleccionamos la segunda flecha, le agregamos la condición "IsWalking" pero a esta le ponemos FALSE.
+ 
+ ![](.README_images/569c25d6.png)
+ 
+ 13-.A ambas flechas le quitamos la opción de "Has exit time" para que no se pase en automatico de un estado de reposo a caminar, se tiene que esperar a que se use el control o las flechas del teclado para que avance.
+ 
+ 14-.Nos posicionamos a nuestra escena y le damos SAVE para que se guarde todo lo que hicimos al Prefab.
+ 
+ ![](.README_images/f6e756e8.png)
+ 
+ 15-.Nos posicionamos en nuestro objeto John Lemon y vamos a agregarle una nueva componente, que sera Rigidboby, lo cual hara que sienta las paredes, congelamos en Y para que no se caiga al espacio, y en rotación para que pueda girar a los lados y le damos nuevamente SAVE.
+ 
+ ![](.README_images/ad83005b.png) 
+ 
+ 16-.En modo de actualización " Update Mode" seleccionamos ANIMATE PHYSICS y le damos SAVE nuevamente.
+ 
+ ![](.README_images/7b9ba700.png)
+ 
+ 17-. Si nos regresamos a SampleScene y seleccionamos al objeto John Lemon vemos que ya tiene la opción de ANIMATE PHYSICS
+ 
+ ![](.README_images/33dea438.png)
+ 
+ 18-.Una vez hecho lo anterior le damos PLAY y vemos que el objeto John Lemon ya tiene movimiento incial.
+ 
+ ![](.README_images/32083e1e.png)
+ 
+ 
+  
+
  ## Creando animaciones adicionales con Animator en la Timline de cinemachine
  
  Para ellos vamos  a dar click derecho en la ventana de a izquierda del timeline en cinemachi y generamos seleccionamos la opcion "Animation Track" <br>
