@@ -243,7 +243,11 @@ Esto es una suma de vectores y le ponemos el desplazamiento indicado con Time.de
 
 ![](.Tutorial_joysitick_images/3790c70e.png)
 
-listo
+El personaje se mueve con el joystick que se le incluyo y en la dirección que le indiqiuemos.
+
+![](.Tutorial_joysitick_images/1d923d1a.png)
+
+listo!!
 
 
 
