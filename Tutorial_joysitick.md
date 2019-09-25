@@ -243,6 +243,8 @@ Esto es una suma de vectores y le ponemos el desplazamiento indicado con Time.de
 
 ![](.Tutorial_joysitick_images/3790c70e.png)
 
+listo
+
 
 
  
