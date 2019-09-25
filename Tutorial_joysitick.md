@@ -157,6 +157,101 @@ Una vez que lo colocamos, le damos Play a nuestro videojuego y ya nos aparece co
 
 Lo que procede a continuación es programar el joystick, seleccionamos el objeto joystick y nos aparece un menú de lado derecho de nuestra pantalla en donde vemos un apartado para ponerle nombre a nuestro Joystick el cual será muy importante recordarlo ya que lo ocuparemos en nuestro código donde lo programaremos.
 
+![](.Tutorial_joysitick_images/6c69d5c4.png)
+
+Para que nuestro personaje tenga caracteristicas fisícas como peso y gravedad, tendremos que agregarle componentes, en este caso le agregaremos Rigibody el cual detectará las colisiones, puede caerse en caso de no existir piso o alguna base donde camine
+
+![](.Tutorial_joysitick_images/71adcd6f.png)
+![](.Tutorial_joysitick_images/6158e6ee.png)
+
+Fijamos los ejes X y Z para que siempre se mantenga en vertical.
+
+Ahora le agregaremos características fisicas, en ADD COMPONENT/ PHYSISCS/ MESH COLAIDER, un mesh colaider es como si al personaje lo envolvieramos con una malla para saber que el personaje tiene una masa sólido.
+
+![](.Tutorial_joysitick_images/0feb5b33.png)
+
+Seleccionamos la opción MESH y escogemos Body01 y seleccionamos Convexo el cual cubrirá como una malla romboide al personaje.
+
+![](.Tutorial_joysitick_images/6d6e2f9c.png)
+
+Ahora el código que incluye la programación del joystick lo vamos a linkear con el personaje , esto lo hacemos seleccionando el código y lo arrastramos al nombre del personaje.
+
+![](.Tutorial_joysitick_images/daf2e8e7.png)
+
+A continuación vemos que nos aparece de lado izquierdo el nombre del código como parte de unos de los componentes del personaje, podemos observar también que todos los atributos que nos aparecen en este parte de la pantalla, ya podemos invocarlos dentro del código para poder manipularlos y hacer que ejecuten las acciones que queramos.
+
+![](.Tutorial_joysitick_images/5e77cb0b.png)
+![](.Tutorial_joysitick_images/83fac9a7.png)
+
+El objeto Quaternion nos poermitirá rotar al personaje dentro de los ejes X,Y y Z
+
+El método STAR es cuando inicializa el juego, activa la componente Animator y Rigibody para empezarlos a manipular.
+
+![](.Tutorial_joysitick_images/ded86e5e.png)
+
+El vector m_Movement es un vector 3D, en la primer parte del código indicamos que ajuste su valor a la posición del joystick (X,Y,Z)
+
+![](.Tutorial_joysitick_images/7e875111.png)
+
+Normalizamos el vector a 1 para poder ejecutar la acción que el personaje gire a la dirección que se le indica.
+
+![](.Tutorial_joysitick_images/9773a242.png)
+
+A continuación le damos una condición para que pueda avanzar, indicando que si es distinto de cero que se active la animación con el joystick.
+
+![](.Tutorial_joysitick_images/15185797.png)
+
+Ahora si ambos objetos son distintos de cero, entonces ejecutará la acción de caminar que previamente a esa acción la nombramos como isWalking de tipo booleano.
+
+![](.Tutorial_joysitick_images/fcaeb258.png)
+
+Con el m_Animator ajustamos a un booleano que se llama "isWalking" que ese previamente lo nombramos en el diagrama al cambiar de un estado a otro.
+
+![](.Tutorial_joysitick_images/fbcc6345.png)
+![](.Tutorial_joysitick_images/49f8ecf4.png)
+
+El vector que se nombro como desiredForward , lo rotamos hacia (RotateTowards) con transforms el cual es una propiedad del objeto personaje y podemos acceder a esas 3 propiedades del vector X,Y y Z, lo que indicará este vector es que el personaje se dirija o se mueva hacia donde se mueva el joystick
+
+![](.Tutorial_joysitick_images/cffc453c.png)
+![](.Tutorial_joysitick_images/2cda3903.png)
+
+Este vector al estar en 3d tiene sus tres componentes como se indica.
+
+![](.Tutorial_joysitick_images/9fc88a83.png)
+
+donde X= DIRECCIÓN
+donde Y= VELOCIDAD (ángulo que es 40)
+donde Z= VELOCIDAD DE ROTACIÓN (tiempo)
+
+Cuando hay un cambio de vector existe un desplazamiento, el usuario ve una distancia, le tenemos que poner velocidad * tiempo
+
+![](.Tutorial_joysitick_images/a80b8d7a.png)
+
+El LookRotation hace que el personaje gire hacia donde se le indica en el vector declarado,
+
+![](.Tutorial_joysitick_images/89f8289d.png)
+
+Tenemos un nuevo método que se llama OnAnimatorMove que es un método propio de Unity, aqui indicamos que el personaje se mueva a la posición que tenga mas el vector de movimiento (m_Movement) que nos los da el joystick que sale de las variables que tiene el joystick
+
+![](.Tutorial_joysitick_images/9cacc67f.png)
+
+Variables del joystick
+
+![](.Tutorial_joysitick_images/4cca0d41.png)
+
+Esto es una suma de vectores y le ponemos el desplazamiento indicado con Time.deltatime
+
+![](.Tutorial_joysitick_images/3790c70e.png)
+
+
+
+ 
+
+
+
+
+
+
 
 
 
