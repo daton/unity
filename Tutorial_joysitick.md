@@ -250,6 +250,95 @@ El personaje se mueve con el joystick que se le incluyo y en la dirección que l
 listo!!
 
 
+## CREACIÓN DE CINEMACHINE 
+
+Lo primero que vamos a hacer es agregarle un terreno con dimensiones al personaje que es donde desarrollaremos todo el escenario y ambient.
+
+En la barra de herramientas nos vamos a GAME OBJECT/ 3D OBJECT/ TERRAIN , ahi le damos el tamaño que queremos tendrá el terreno, esto será en la parte derecha de la pantalla, seleccionamos el engrane y nos aparece el menú para modificar dimensiones.
+
+![](.Tutorial_joysitick_images/e0075f17.png)
+![](.Tutorial_joysitick_images/ea03e09f.png)
+
+Una vez que ya tenemos el área seleccionada ahora vamos a integrar el cinemachine la cual seguirá la personaje en la dirección que nos movamos, ya que cuando nos movemos con el joystick el personaje sale de la pantalla y ya no podemos visualizarlo.
+
+![](.Tutorial_joysitick_images/bd4721ca.png)
+
+Nos vamos a CINEMACHINE/CREATE VIRTUAL CAMERA, una vez que hacemos estoen automático nos genera una cámara.
+
+![](.Tutorial_joysitick_images/fcfc3066.png)
+
+Una vez hecho esto vemos que a la main camara se le agregan componentes como Cinemachine brain
+
+![](.Tutorial_joysitick_images/54a2a406.png)
+![](.Tutorial_joysitick_images/ce8c1110.png)
+
+Seleccionamos al personaje de modo que se vea posicionado en el incio, nos vamos a la cámara virtual que agregamos y la seleccionamos ,vamos a GAME OBJETC/ ALIGN WITH VIEW
+
+![](.Tutorial_joysitick_images/840f1a42.png)
+
+Para que la cámara sepa a quien debe de seguir, debemos arrastrar el nombre del personaje a la parte derecha de la pantalla en la casilla indicada como "FOLLOW" y soltamos el nombre del personaje en esta casilla.
+
+![](.Tutorial_joysitick_images/d5034ebc.png)
+
+En la componente Body, le agregamos FRAMING TRANSPOSER para que el personaje no se salga del recuadro naranja, en la parte de AIM le colocamos la opción DO NOTHING.
+
+![](.Tutorial_joysitick_images/cac8b268.png)
+
+Para mover la distancia de la cámara hacia el personaje, manipulamos la opción CAMERA DISTANCE y la damos 6 metros, una vez hecho ésto vemos que el personaje queda enmarcado en un rectángulo del cual no podrá salirse que es donde el personaje estará y la cámara lo seguirá.
+
+![](.Tutorial_joysitick_images/f54a32de.png)
+
+Y una vez que manipulemos el joystick a la dirección que le indiquemos, éste no se saldrá de foco y siempre lo estaremos visualizando.
+
+
+## CREACIÓN DE TEXTURAS Y AMBIENTE
+
+En la componente Terrain, en el icono de la brocha nos servirá para ponerle la textura de pasto o arena a nuestro terreno, seleccionamos la opción PAIN TEXTURE/ EDIT TERRAIN LAYERS /CREATE LAYER y nos aparecerá opciones para elegir, ahi es donde seleccionamos la del color pasto.
+
+![](.Tutorial_joysitick_images/b71e4d8e.png)
+![](.Tutorial_joysitick_images/}.png)
+
+El terreno ya tienen el pasto seleccionado
+
+![](.Tutorial_joysitick_images/9579a501.png)
+
+Seleccionamos otra textura, en la parte de brochas seleccionamos con la que implementaremos la textura al terreno, dando click en el terreno se iluminará con el color seleccionado
+
+![](.Tutorial_joysitick_images/f5a691a9.png)
+![](.Tutorial_joysitick_images/008638a9.png)
+
+Para colocar relieves en forma de montañas, seleccionamos el icono de PAINT TEXTURE y seleccionamos RAISE O LOWER TERRAIN lo cual creará las montañas.
+
+![](.Tutorial_joysitick_images/87f930bb.png)
+
+Con shift y click sostenido le bajamos la altura a las montañas, una vez hecho esto y colocando las montañas podemos visualizar el paisaje.
+
+![](.Tutorial_joysitick_images/4d434134.png)
+
+Para darle un colaider a los objetos que colocamos de tal forma que el personaje no pueda atravesarlos, debemos seleccionar el objeto, una vez seleccionado ingresamos a sus propiedad y le damos add component, seleccionamos el colaider que se ajuste a la forma del objeto y le damos aplicar
+
+![](.Tutorial_joysitick_images/56fa729f.png)
+
+![](.Tutorial_joysitick_images/8dc7fb48.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 
