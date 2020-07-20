@@ -34,8 +34,8 @@ public class AnimacionesZombis : MonoBehaviour
 
     //Clip Disparo
     public AudioClip clipDisparo;
-    
-   
+
+
 
     void Start()
     {
@@ -44,7 +44,11 @@ public class AnimacionesZombis : MonoBehaviour
         barra.setMaximoVidas(maximoVidas);
 
         //Vamos a  probar si se hace bien la clonacion en la localizacion del cubo.
-    zombiClonado=    Instantiate(prefabYaku, new Vector3(308, 0.85f, 380.85f), Quaternion.identity);
+        zombiClonado = Instantiate(prefabYaku, new Vector3(308, 0.85f, 380.85f), Quaternion.identity);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
 
     }
 
