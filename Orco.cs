@@ -11,7 +11,7 @@ public class Orco : MonoBehaviour
     //DEclaramos una variable publica, que sera el player, pues lo tendra que seguir para matarlo!
     public GameObject player;
     Animator animator;
-    public GameObject casa;
+
     public GameObject textoGameOver;
     public float distanciaAtaque=6;
     
