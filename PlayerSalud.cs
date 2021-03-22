@@ -8,7 +8,7 @@ public class PlayerSalud : MonoBehaviour
     // Start is called before the first frame update
     BarraSaludable barraSaludable;
     public GameObject objetoBarra;
-    int vidas=40;
+    public int vidas=40;
     Animator animator;
     public static  bool estaVivo;
 
@@ -19,7 +19,7 @@ public class PlayerSalud : MonoBehaviour
 
             barraSaludable = objetoBarra.GetComponent<BarraSaludable>();
       
-            barraSaludable.setMaximoVidas(40);
+            barraSaludable.setMaximoVidas(vidas);
         animator=GetComponent<Animator>();
         
     }
