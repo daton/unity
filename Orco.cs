@@ -13,6 +13,7 @@ public class Orco : MonoBehaviour
     Animator animator;
     public GameObject casa;
     public GameObject textoGameOver;
+    public float distanciaAtaque=6;
     
     void Start()
     {
@@ -28,37 +29,45 @@ public class Orco : MonoBehaviour
 
    
      
+        
+            float distancia = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
+        if (distancia >= distanciaAtaque)
+        {
+            agente.speed = 0;
+            animator.SetBool("EstaCorriendo", false);
+            animator.SetBool("EstaAtacando", false);
+        }
+        else
+        {
+            agente.speed = 3.5f;
             agente.SetDestination(player.transform.position);
-        float distancia = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
-     
 
-
-            if (distancia > 2.0f )
+            if (distancia > 2.0f && distancia < distanciaAtaque)
             {
                 animator.SetBool("EstaCorriendo", true);
                 animator.SetBool("EstaAtacando", false);
-              
-              
-             }
 
-            
-           if(distancia<=2)
+
+            }
+
+
+            if (distancia <= 2)
             {
-        
+
                 if (PlayerSalud.estaVivo)
                 {
                     animator.SetBool("EstaAtacando", true);
-                   
+
                 }
                 else
                 {
                     animator.SetBool("YaGano", true);
                     print("Ya esta muerto");
-                textoGameOver.SetActive(true);
+                    textoGameOver.SetActive(true);
                 }
-      
+
+            }
         }
-        
        
     }
 }
